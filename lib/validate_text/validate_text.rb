@@ -1,3 +1,5 @@
 def validateText(string)
-    "String"
+    if string == "S"
+        true
+    end
 end
