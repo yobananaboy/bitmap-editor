@@ -1,5 +1,8 @@
 def validateText(string)
-    if string == "S"
+    case string
+    when "S"
+        true
+    when /I \d \d/
         true
     end
 end
