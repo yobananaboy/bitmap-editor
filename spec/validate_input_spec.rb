@@ -31,7 +31,7 @@ describe "validate input" do
         end
     end
     
-    context "given 'L 1 2 C" do
+    context "given 'L 1 2 C' and pigment coordinates in the bitmap area" do
         it "returns true" do
            expect(validateInput("L 1 2 C", 4, 5)).to eq true
         end
@@ -43,9 +43,39 @@ describe "validate input" do
         end
     end
     
-    context "given 'L 50 50 C' and pigment coordinates out of bitmap range" do
+    context "given 'L 50 50 C' and pigment coordinates out of bitmap area" do
         it "returns false" do
             expect(validateInput("L 50 50 C", 30, 30)).to eq false
+        end
+    end
+    
+    context "given 'V 2 3 5 C' and pigment coordinates in the bitmap area" do
+        it "returns true" do
+            expect(validateInput("V 2 3 5 C", 10, 10)).to eq true
+        end
+    end
+    
+    context "given 'H 3 2 6 C' and pigment coordinates in the bitmap area" do
+        it "returns true" do
+            expect(validateInput("H 3 2 6 C", 10, 10)).to eq true
+        end
+    end
+    
+    context "given 'V 10 11 12 C' and both y pigment coordinates outside the bitmap area" do
+        it "returns false" do
+            expect(validateInput("V 10 11 12 C", 10, 10)).to eq false
+        end
+    end
+    
+    context "given 'V 10 9 12 C' and one y pigment coordinate outside the bitmap area" do
+        it "returns false" do
+            expect(validateInput("V 10 11 12 C", 10, 10)).to eq false
+        end
+    end
+    
+    context "given 'V 10 9 12 C' and x pigment coordinate outside the bitmap area" do
+        it "returns false" do
+            expect(validateInput("V 10 9 12 C", 9, 30)).to eq false
         end
     end
     
