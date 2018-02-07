@@ -24,4 +24,10 @@ describe "validate input" do
             expect(validateInput("I 4 5")).to eq true
         end
     end
+    
+    context "given 'L 1 2 C'" do
+        it "returns false" do
+            expect(validateInput("L 1 2 C")).to eq false
+        end
+    end
 end
