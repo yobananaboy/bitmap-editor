@@ -1,4 +1,4 @@
-require 'colour_pixel'
+require 'colour_single_pixel'
 
 describe "colour single pixel" do
     context "given X and Y coordinates, fill with colour C"
@@ -9,8 +9,8 @@ describe "colour single pixel" do
                "1,3" => "O", "2,3" => "O", "3,3" => "O", "4,3" => "O"
            }
            
-           expect(colourPixel(bitmap, 1, 3, "P")).to include("1,3" => "P")
-           expect(colourPixel(bitmap, 1, 3, "P")).to include("3,1" => "O")
+           expect(colourSinglePixel(bitmap, 1, 3, "P")).to include("1,3" => "P")
+           expect(colourSinglePixel(bitmap, 1, 3, "P")).to include("3,1" => "O")
     end
     
     context "given X and Y coordinates, fill with colour C"
@@ -21,9 +21,9 @@ describe "colour single pixel" do
                "1,3" => "O", "2,3" => "D", "3,3" => "O", "4,3" => "O"
            }
            
-           expect(colourPixel(bitmap, 4, 2, "G")).to include("4,2" => "G")
-           expect(colourPixel(bitmap, 4, 2, "G")).to include("3,2" => "G")
-           expect(colourPixel(bitmap, 2, 3, "P")).to include("2,3" => "P")
-           expect(colourPixel(bitmap, 2, 3, "P")).to include("2,2" => "D")
+           expect(colourSinglePixel(bitmap, 4, 2, "G")).to include("4,2" => "G")
+           expect(colourSinglePixel(bitmap, 4, 2, "G")).to include("3,2" => "G")
+           expect(colourSinglePixel(bitmap, 2, 3, "P")).to include("2,3" => "P")
+           expect(colourSinglePixel(bitmap, 2, 3, "P")).to include("2,2" => "D")
     end
 end
