@@ -1,2 +1,3 @@
 def printBitmap(bitmap)
+    
 end
