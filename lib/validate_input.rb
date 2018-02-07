@@ -13,7 +13,10 @@ def validateInput(input, width = 0, height = 0)
         validateL(input, width, height)
         
     when /^([VH]) (\d+) (\d+) (\d+) ([A-Z])$/
-        validateVH(input, width, height) 
+        validateVH(input, width, height)
+    else
+        puts "Please enter a valid input."
+        false
     end
     
 end
