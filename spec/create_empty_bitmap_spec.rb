@@ -19,6 +19,15 @@ describe "create empty bitmap" do
        end
     end
     
+    context "given 'empty bitmap and width of 230 and height of 250'" do
+        it "returns empty 230 by 250 bitmap grid" do
+            bitmap = Hash.new("O")
+            expect(createEmptyBitmap(bitmap, 230, 250)).to include("230,250" => "O")
+            expect(createEmptyBitmap(bitmap, 230, 250)).to include("150,170" => "O")
+            expect(createEmptyBitmap(bitmap, 230, 250)).not_to include("251,251")
+            expect(createEmptyBitmap(bitmap, 230, 250)).not_to include("0,0")
+        end
+    end    
     
     context "given 'empty bitmap and width of 250 and height of 250'" do
         it "returns empty 250 by 250 bitmap grid" do

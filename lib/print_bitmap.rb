@@ -1,6 +1,6 @@
 def printBitmap(bitmap, width, height)
-    (1..width).each do |x|
-        (1..height).each do |y|
+    (1..height).each do |y|
+        (1..width).each do |x|
             print bitmap["#{x},#{y}"]
         end
         puts
