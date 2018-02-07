@@ -27,7 +27,7 @@ describe "validate input" do
     
     context "given 'I 300 0'" do
         it "returns false" do
-            expect(validateInput("I 300 500")).to eq false
+            expect(validateInput("I 300 0")).to eq false
         end
     end
 end
