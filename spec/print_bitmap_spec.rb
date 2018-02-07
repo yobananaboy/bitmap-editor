@@ -31,7 +31,7 @@ describe "prints bitmap" do
                "1,6" => "O", "2,6" => "Z", "3,6" => "O",
                "1,7" => "O", "2,7" => "O", "3,7" => "O"
            }
-           expect { printBitmap(bitmap, 3, 7) }.to output("CCO\nOOO\nOOO\nDZO\nZO\nOZO\nOOO\n").to_stdout
+           expect { printBitmap(bitmap, 3, 7) }.to output("CCO\nOOO\nOOO\nDZO\nOZO\nOZO\nOOO\n").to_stdout
        end
     end
 end
