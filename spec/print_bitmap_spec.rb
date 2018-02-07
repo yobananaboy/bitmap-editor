@@ -1,4 +1,4 @@
-require('print_bitmap')
+require 'print_bitmap'
 
 describe "prints bitmap" do
     context "given print command and bitmap, bitmap width and bitmap height to print" do

@@ -1,4 +1,4 @@
-import 'validate_input'
+require 'validate_input'
 
 class BitmapEditor
 
