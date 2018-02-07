@@ -33,7 +33,7 @@ describe "validate input" do
     
     context "given 'L 1 2 C" do
         it "returns true" do
-           expect(validateInput("L 1 2 C")).to eq true
+           expect(validateInput("L 1 2 C", 4, 5)).to eq true
         end
     end
     
