@@ -1,4 +1,4 @@
-def validateText(string)
+def validateInput(string)
     case string
     when "S"
         true
