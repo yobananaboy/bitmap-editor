@@ -1,6 +1,6 @@
-require "validate_text/validate_text"
+require "validate_input"
 
-describe "validate text" do
+describe "validate input" do
     context "given 'S'" do
         it "returns true" do
             expect(validateText("S")).to eq true
@@ -24,6 +24,5 @@ describe "validate text" do
             expect(validateText("I 4 5")).to eq true
         end
     end
-    
     
 end
