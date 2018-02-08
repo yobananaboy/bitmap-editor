@@ -57,4 +57,8 @@ describe "bitmap editor" do
        end
     end
     
+    # Test here's what could have been
+    
+    # More error testing
+    
 end

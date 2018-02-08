@@ -6,7 +6,9 @@ def validateInput(input, width = 0, height = 0)
     case input
     when "S"
         if width <= 0 || height <= 0
-            false
+            {
+                "input_error" => "Error. Cannot show bitmap. Please create a bitmap before using 'S' command."
+            }
         else
             {
                 "input_type" => "S"

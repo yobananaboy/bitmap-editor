@@ -9,7 +9,7 @@ describe "validate input" do
     
     context "given 'S'" do
         it "returns false because no width and height specified, therefore no bitmap created" do
-            expect(validateInput("S", 0, 0)).to eq false
+            expect(validateInput("S", 0, 0)).to include("input_error" => "Error. Cannot show bitmap. Please create a bitmap before using 'S' command.")
         end
     end
     
@@ -29,13 +29,13 @@ describe "validate input" do
     
     context "given 'I 4 5'" do
         it "returns false because width and height specified, therefore bitmap already created" do
-            expect(validateInput("I 4 5", 10, 10)).to eq false
+            expect(validateInput("I 4 5", 10, 10)).to include("input_error" => "You have already initiated a bitmap.")
         end
     end
     
     context "given 'I 300 0'" do
         it "returns false" do
-            expect(validateInput("I 300 0")).to eq false
+            expect(validateInput("I 300 0")).to include("input_error" => "You've entered an incorrect width or height for the bitmap. Please enter a range between 1 and 250.")
         end
     end
     
@@ -56,7 +56,7 @@ describe "validate input" do
     
     context "given 'L 50 50 C' and pigment coordinates out of bitmap area" do
         it "returns false" do
-            expect(validateInput("L 50 50 C", 30, 30)).to eq false
+            expect(validateInput("L 50 50 C", 30, 30)).to include("input_error" => "You have tried to colour a pixel that is outside of the bitmap's area.")
         end
     end
     
@@ -80,19 +80,19 @@ describe "validate input" do
     
     context "given 'V 10 11 12 C' and both y pigment coordinates outside the bitmap area" do
         it "returns false" do
-            expect(validateInput("V 10 11 12 C", 10, 10)).to eq false
+            expect(validateInput("V 10 11 12 C", 10, 10)).to include("input_error" => "You have tried to colour a pixel that is outside of the bitmap's area.")
         end
     end
     
     context "given 'V 10 9 12 C' and one y pigment coordinate outside the bitmap area" do
         it "returns false" do
-            expect(validateInput("V 10 11 12 C", 10, 10)).to eq false
+            expect(validateInput("V 10 11 12 C", 10, 10)).to include("input_error" => "You have tried to colour a pixel that is outside of the bitmap's area.")
         end
     end
     
     context "given 'V 10 9 12 C' and x pigment coordinate outside the bitmap area" do
         it "returns false" do
-            expect(validateInput("V 10 9 12 C", 9, 30)).to eq false
+            expect(validateInput("V 10 9 12 C", 9, 30)).to include("input_error" => "You have tried to colour a pixel that is outside of the bitmap's area.")
         end
     end
     

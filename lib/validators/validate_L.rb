@@ -5,8 +5,9 @@ def validateL(input, width, height)
     input_y_coordinate = input_y_coordinate.to_i
     
     if input_x_coordinate < 1 || input_x_coordinate > width || input_y_coordinate < 1 || input_y_coordinate > height
-        puts "You have tried to colour a pixel that is outside of the bitmap's area."
-        return false
+        return {
+            "input_error" => "You have tried to colour a pixel that is outside of the bitmap's area."
+        }
     end
     
     {
