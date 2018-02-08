@@ -9,5 +9,10 @@ def validateL(input, width, height)
         return false
     end
     
-    true
+    {
+        "input_type" => input_type,
+        "input_x_coordinate" => input_x_coordinate,
+        "input_y_coordinate" => input_y_coordinate,
+        "input_colour" => input_colour
+    }
 end

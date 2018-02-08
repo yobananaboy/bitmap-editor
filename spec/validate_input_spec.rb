@@ -21,9 +21,9 @@ describe "validate input" do
     
     context "given 'I 1 1'" do
         it "returns true because no width and height specified, therefore new bitmap" do
-           expect(validateInput("I 1 1", 0, 0)).to inlude("input_type" => "I")
-           expect(validateInput("I 1 1", 0, 0)).to inlude("input_width" => "1")
-           expect(validateInput("I 1 1", 0, 0)).to inlude("input_height" => "1")
+           expect(validateInput("I 1 1", 0, 0)).to include("input_type" => "I")
+           expect(validateInput("I 1 1", 0, 0)).to include("input_width" => 1)
+           expect(validateInput("I 1 1", 0, 0)).to include("input_height" => 1)
         end
     end
     
@@ -41,7 +41,10 @@ describe "validate input" do
     
     context "given 'L 1 2 C' and pigment coordinates in the bitmap area" do
         it "returns true" do
-           expect(validateInput("L 1 2 C", 4, 5)).to eq true
+           expect(validateInput("L 1 2 C", 4, 5)).to include("input_type" => "L")
+           expect(validateInput("L 1 2 C", 4, 5)).to include("input_x_coordinate" => 1)
+           expect(validateInput("L 1 2 C", 4, 5)).to include("input_y_coordinate" => 2)
+           expect(validateInput("L 1 2 C", 4, 5)).to include("input_colour" => "C")
         end
     end
     
