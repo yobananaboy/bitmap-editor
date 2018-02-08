@@ -1,6 +1,6 @@
 def clearBitmap(bitmap, width, height)
-    createEmptyBitmap(bitmap, width, height)
+    unless bitmap.length == 0
+        bitmap = createEmptyBitmap(bitmap, width, height)
+    end
+    bitmap
 end
-
-# check bitmap exists
-# if so, print empty bitmap

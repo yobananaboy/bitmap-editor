@@ -10,6 +10,8 @@ class BitmapEditor
     
     File.open(file).each do |line|
       line = line.chomp
+      
+      
       # validateInput(line, width, height)
     end
   end
