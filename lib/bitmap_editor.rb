@@ -16,8 +16,8 @@ class BitmapEditor
     File.open(file).each do |line|
       line = line.chomp.strip.upcase
       input = validateInput(line, width, height)
-      unless input
-        puts "Please enter a valid input."
+      if input["input_error"]
+        puts input["input_error"]
         break
       end
       case input["input_type"]

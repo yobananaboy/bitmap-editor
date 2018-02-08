@@ -53,7 +53,7 @@ describe "bitmap editor" do
     context "given input from file show.txt outputs to stdout" do
        it "receives input S and returns error message" do
           filepath = 'examples/show.txt'
-          expect { BitmapEditor.new.run(filepath) }.to output("Please enter a valid input.\n").to_stdout
+          expect { BitmapEditor.new.run(filepath) }.to output("Error. Cannot show bitmap. Please create a bitmap before using 'S' command.\n").to_stdout
        end
     end
     
