@@ -21,7 +21,9 @@ describe "validate input" do
     
     context "given 'I 1 1'" do
         it "returns true because no width and height specified, therefore new bitmap" do
-           expect(validateInput("I 1 1", 0, 0)).to eq true
+           expect(validateInput("I 1 1", 0, 0)).to inlude("input_type" => "I")
+           expect(validateInput("I 1 1", 0, 0)).to inlude("input_width" => "1")
+           expect(validateInput("I 1 1", 0, 0)).to inlude("input_height" => "1")
         end
     end
     

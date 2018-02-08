@@ -13,6 +13,9 @@ def validateI(input, width, height)
         puts "You've entered an incorrect width or height for the bitmap. Please enter a range between 1 and 250."
         return false
     end
-    
-    true
+    {
+        "input_type" => input_type,
+        "input_width" => input_width,
+        "input_height" => input_height
+    }
 end
