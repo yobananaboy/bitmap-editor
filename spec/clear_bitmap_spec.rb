@@ -10,4 +10,11 @@ describe "clear bitmap" do
        end
     end
     
+    context "given clear command and empty bitmap, return empty bitmap" do
+       it "should return empty bitmap, which will have length of 0" do
+           bitmap = {}
+           expect(clearBitmap(bitmap, 2, 2).length).to be(0)
+       end
+    end
+    
 end
