@@ -24,19 +24,24 @@ describe "bitmap editor" do
            filepath = 'examples/test/create_grid_add_line_colour.txt'
            expect(BitmapEditor.new.run(filepath)).to include("2,2" => "Q")
            expect(BitmapEditor.new.run(filepath)).to include("2,3" => "Q")
-           expect(BitmapEditor.new.run(filepath)).to include("2,4" => "Q")
-           expect(BitmapEditor.new.run(filepath)).to include("2,5" => "Q")
-           expect(BitmapEditor.new.run(filepath)).to include("2,6" => "Q")
            expect(BitmapEditor.new.run(filepath)).to include("2,7" => "Q")
            expect(BitmapEditor.new.run(filepath)).to include("2,8" => "Q")
            expect(BitmapEditor.new.run(filepath)).to include("2,9" => "Q")
-           expect(BitmapEditor.new.run(filepath)).to include("2,4" => "J")
-           expect(BitmapEditor.new.run(filepath)).to include("2,5" => "J")
-           expect(BitmapEditor.new.run(filepath)).to include("2,6" => "J")
+           expect(BitmapEditor.new.run(filepath)).to include("4,4" => "J")
+           expect(BitmapEditor.new.run(filepath)).to include("5,4" => "J")
+           expect(BitmapEditor.new.run(filepath)).to include("6,4" => "J")
        end
     end
     
-    
+    context "given input from file show.txt outputs to stdout" do
+       it "receives input to create empty grid, clear and than add single pixel of colour" do
+           filepath = 'examples/test/clear.txt'
+           expect(BitmapEditor.new.run(filepath)).to include("1,1" => "K")
+           expect(BitmapEditor.new.run(filepath)).to include("1,2" => "O")
+           expect(BitmapEditor.new.run(filepath)).to include("2,1" => "O")
+           expect(BitmapEditor.new.run(filepath)).to include("10,10" => "O")
+       end
+    end
     
     
 end

@@ -18,7 +18,7 @@ def validateVH(input, width, height)
             {
                 "input_type" => input_type,
                 "input_x_coordinate" => input_x_coordinate,
-                "input_y_coordinates" => input_coordinates,
+                "input_y_coordinate" => input_coordinates,
                 "input_colour" => input_colour
             }
             
@@ -36,7 +36,7 @@ def validateVH(input, width, height)
             
             {
                 "input_type" => input_type,
-                "input_x_coordinates" => input_coordinates,
+                "input_x_coordinate" => input_coordinates,
                 "input_y_coordinate" => input_y_coordinate,
                 "input_colour" => input_colour
             }

@@ -1,5 +1,7 @@
 require 'validate_input'
 require 'create_empty_bitmap'
+require 'colour_single_pixel'
+require 'colour_multiple_pixels'
 
 class BitmapEditor
 
@@ -19,6 +21,10 @@ class BitmapEditor
         bitmap = createEmptyBitmap(bitmap, width, height)
       when "L"
         bitmap = colourSinglePixel(bitmap, input["input_x_coordinate"], input["input_y_coordinate"], input["input_colour"])
+      when "V"
+        bitmap = colourMultiplePixels(bitmap, input["input_x_coordinate"], input["input_y_coordinate"], input["input_colour"])
+      when "H"
+        bitmap = colourMultiplePixels(bitmap, input["input_x_coordinate"], input["input_y_coordinate"], input["input_colour"])
       end
     end
     bitmap
