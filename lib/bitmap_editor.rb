@@ -10,7 +10,7 @@ class BitmapEditor
     bitmap = Hash.new("O")
     
     File.open(file).each do |line|
-      line = line.chomp
+      line = line.chomp.strip.upcase
       input = validateInput(line, width, height)
       case input["input_type"]
       when "I"

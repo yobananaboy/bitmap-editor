@@ -72,7 +72,7 @@ describe "validate input" do
     context "given 'H 3 2 6 C' and pigment coordinates in the bitmap area" do
         it "returns true" do
             expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_type" => "H")
-            expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_x_coordinates" => [3,2])
+            expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_x_coordinates" => [2,3])
             expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_y_coordinate" => 6)
             expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_colour" => "C")
         end
