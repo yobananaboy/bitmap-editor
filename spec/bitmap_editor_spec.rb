@@ -34,7 +34,7 @@ describe "bitmap editor" do
     end
     
     context "given input from file show.txt outputs to stdout" do
-       it "receives input to create empty grid, clear and than add single pixel of colour" do
+       it "receives input to create empty grid, clear and then add single pixel of colour" do
            filepath = 'examples/test/clear.txt'
            expect(BitmapEditor.new.run(filepath)).to include("1,1" => "K")
            expect(BitmapEditor.new.run(filepath)).to include("1,2" => "O")
@@ -43,5 +43,18 @@ describe "bitmap editor" do
        end
     end
     
+    context "given input from file show.txt outputs to stdout" do
+       it "receives input to create empty grid, add horizontal line and then show output" do
+          filepath = 'examples/test/print.txt'
+          expect { BitmapEditor.new.run(filepath) }.to output("OOO\nDDD\nOOO\n").to_stdout
+       end
+    end
+    
+    context "given input from file show.txt outputs to stdout" do
+       it "receives input S and returns error message" do
+          filepath = 'examples/show.txt'
+          expect { BitmapEditor.new.run(filepath) }.to output("Please enter a valid input.\n").to_stdout
+       end
+    end
     
 end

@@ -3,7 +3,7 @@ require "validate_input"
 describe "validate input" do
     context "given 'S'" do
         it "returns true because width and height specified, therefore bitmap already created" do
-            expect(validateInput("S", 4, 4)).to eq true
+            expect(validateInput("S", 4, 4)).to include("input_type" => "S")
         end
     end
     
@@ -15,7 +15,7 @@ describe "validate input" do
     
     context "given 'C'" do
         it "returns true" do
-            expect(validateInput("C")).to eq true 
+            expect(validateInput("C")).to include("input_type" => "C") 
         end
     end
     
