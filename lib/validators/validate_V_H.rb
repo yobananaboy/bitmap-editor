@@ -13,7 +13,13 @@ def validateVH(input, width, height)
                 return false
             end
             
-            true
+            {
+                "input_type" => input_type,
+                "input_x_coordinate" => input_x_coordinate,
+                "input_y_coordinates" => [input_y1_coordinate, input_y2_coordinate],
+                "input_colour" => input_colour
+            }
+            
         else
             input_x1_coordinate = input_first_coordinate.to_i
             input_x2_coordinate = input_second_coordinate.to_i
@@ -24,7 +30,12 @@ def validateVH(input, width, height)
                 return false
             end
             
-            true    
+            {
+                "input_type" => input_type,
+                "input_x_coordinates" => [input_x1_coordinate, input_x2_coordinate],
+                "input_y_coordinate" => input_y_coordinate,
+                "input_colour" => input_colour
+            }
             
         end
 end
