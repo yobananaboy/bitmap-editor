@@ -9,17 +9,21 @@ class BitmapEditor
 
   def run(file)
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
+    count = 1
     width = 0
     height = 0
     bitmap = Hash.new("O")
     
     File.open(file).each do |line|
+      
       line = line.chomp.strip.upcase
       input = validateInput(line, width, height)
       if input["input_error"]
         puts input["input_error"]
+        puts "Invalid input on line #{count}."
         break
       end
+      
       case input["input_type"]
       when "I"
         width = input["input_width"]
@@ -37,7 +41,10 @@ class BitmapEditor
         bitmap = printBitmap(bitmap, width, height)
       end
     end
+    
+    count +=1
     bitmap
+    
   end
   
 end
