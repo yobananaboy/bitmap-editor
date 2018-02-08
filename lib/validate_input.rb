@@ -4,7 +4,12 @@ require('validators/validate_V_H')
 
 def validateInput(input, width = 0, height = 0)
     case input
-    when "S" then true
+    when "S"
+        if width <= 0 || height <= 0
+            false
+        else
+            true
+        end
     when "C" then true
     when /^(I) (\d+) (\d+)$/
         validateI(input, width, height)

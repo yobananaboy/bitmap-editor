@@ -2,8 +2,14 @@ require "validate_input"
 
 describe "validate input" do
     context "given 'S'" do
-        it "returns true" do
-            expect(validateInput("S")).to eq true
+        it "returns true because width and height specified, therefore bitmap already created" do
+            expect(validateInput("S", 4, 4)).to eq true
+        end
+    end
+    
+    context "given 'S'" do
+        it "returns false because no width and height specified, therefore no bitmap created" do
+            expect(validateInput("S", 0, 0)).to eq false
         end
     end
     
@@ -14,14 +20,14 @@ describe "validate input" do
     end
     
     context "given 'I 1 1'" do
-        it "returns true" do
-           expect(validateInput("I 1 1")).to eq true
+        it "returns true because no width and height specified, therefore new bitmap" do
+           expect(validateInput("I 1 1", 0, 0)).to eq true
         end
     end
     
     context "given 'I 4 5'" do
-        it "returns true" do
-            expect(validateInput("I 4 5")).to eq true
+        it "returns false because width and height specified, therefore bitmap already created" do
+            expect(validateInput("I 4 5", 10, 10)).to eq false
         end
     end
     
