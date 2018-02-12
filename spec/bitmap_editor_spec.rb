@@ -57,4 +57,11 @@ describe "bitmap editor" do
        end
     end
     
+    context "given input from file invalid_input_letter.txt outputs to stdout" do
+        it "receives invalid input letter and returns error message" do
+            filepath = 'examples/test/invalid_input_letter.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("Invalid input provided.\nInvalid input on line 3.\n").to_stdout
+        end
+    end
+    
 end
