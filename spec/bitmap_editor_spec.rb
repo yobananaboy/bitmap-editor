@@ -1,7 +1,7 @@
 require 'bitmap_editor'
 
 describe "bitmap editor" do
-    context "given input from file show.txt outputs to stdout" do
+    context "given input from file empty_grid.txt outputs to stdout" do
        it "receives input to create empty grid" do
            filepath = 'examples/test/empty_grid.txt'
            expect(BitmapEditor.new.run(filepath)).to include("1,1" => "O")
@@ -9,7 +9,7 @@ describe "bitmap editor" do
        end
     end
     
-    context "given input from file show.txt outputs to stdout" do
+    context "given input from file create_grid_add_colour.txt outputs to stdout" do
        it "receives input to create empty grid and add colour" do
            filepath = 'examples/test/create_grid_add_colour.txt'
            expect(BitmapEditor.new.run(filepath)).to include("1,1" => "O")
@@ -19,7 +19,7 @@ describe "bitmap editor" do
        end
     end
     
-    context "given input from file show.txt outputs to stdout" do
+    context "given input from file create_grid_add_line_colour.txt outputs to stdout" do
        it "receives input to create empty grid and add line of colour" do
            filepath = 'examples/test/create_grid_add_line_colour.txt'
            expect(BitmapEditor.new.run(filepath)).to include("2,2" => "Q")
@@ -33,7 +33,7 @@ describe "bitmap editor" do
        end
     end
     
-    context "given input from file show.txt outputs to stdout" do
+    context "given input from file clear.txt outputs to stdout" do
        it "receives input to create empty grid, clear and then add single pixel of colour" do
            filepath = 'examples/test/clear.txt'
            expect(BitmapEditor.new.run(filepath)).to include("1,1" => "K")
@@ -43,7 +43,7 @@ describe "bitmap editor" do
        end
     end
     
-    context "given input from file show.txt outputs to stdout" do
+    context "given input from file print.txt outputs to stdout" do
        it "receives input to create empty grid, add horizontal line and then show output" do
           filepath = 'examples/test/print.txt'
           expect { BitmapEditor.new.run(filepath) }.to output("OOO\nDDD\nOOO\n").to_stdout
@@ -56,9 +56,5 @@ describe "bitmap editor" do
           expect { BitmapEditor.new.run(filepath) }.to output("Error. Cannot show bitmap. Please create a bitmap before using 'S' command.\nInvalid input on line 1.\n").to_stdout
        end
     end
-    
-    # Test here's what could have been
-    
-    # More error testing
     
 end

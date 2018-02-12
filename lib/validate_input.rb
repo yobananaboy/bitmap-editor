@@ -27,7 +27,9 @@ def validateInput(input, width = 0, height = 0)
     when /^([VH]) (\d+) (\d+) (\d+) ([A-Z])$/
         validateVH(input, width, height)
     else
-        false
+        {
+            "input_error" => "Invalid input provided."
+        }
     end
     
 end
