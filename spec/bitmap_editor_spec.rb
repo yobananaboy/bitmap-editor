@@ -64,4 +64,11 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file blank_input_line.txt outputs to stdout" do
+        it "receives blank line in input - ignores this" do
+            filepath = 'examples/test/blank_input_line.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("OOO\nOOO\nOOO\n").to_stdout
+        end
+    end
+    
 end

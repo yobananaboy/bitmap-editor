@@ -101,5 +101,5 @@ describe "validate input" do
             expect(validateInput("D")).to include("input_error" => "Invalid input provided.")    
         end
     end
-    
+
 end
