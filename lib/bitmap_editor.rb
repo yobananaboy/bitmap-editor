@@ -23,7 +23,7 @@ class BitmapEditor
         input = validateInput(line, width, height)
         if input["input_error"]
           puts "Error: #{input["input_error"]}"
-          puts "Invalid input on line #{count}."
+          puts "Invalid input on line #{count} in #{file}."
           break
         end
         
