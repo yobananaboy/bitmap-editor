@@ -29,8 +29,9 @@ def validateVH(input, width, height)
             input_y_coordinate = input_third_coordinate.to_i
             
             if input_x1_coordinate < 1 || input_x1_coordinate > width || input_x2_coordinate < 1 || input_x2_coordinate > width || input_y_coordinate < 1 || input_y_coordinate > height
-                puts "You have tried to colour a pixel that is outside of the bitmap's area."
-                return false
+                return {
+                    "input_error" => "You have tried to colour a pixel that is outside of the bitmap's area."
+                }
             end
             
             input_coordinates = [input_x1_coordinate, input_x2_coordinate].sort!
