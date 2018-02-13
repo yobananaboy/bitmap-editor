@@ -99,4 +99,11 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file colour_before_bitmap.txt outputs to stdout" do
+        it "receives input to add colour before bitmap created - errors" do
+            filepath = 'examples/test/colour_before_bitmap.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("You have tried to add colour before bitmap is created.\nInvalid input on line 1.\n").to_stdout
+        end
+    end
+    
 end
