@@ -48,7 +48,6 @@ AWOOO
 OWOOO
 OWOOO
 OWOOO
-
 ```
 
 # Running
