@@ -113,4 +113,11 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file lowercase.txt outputs to stdout" do
+        it "receives multiple inputs in lowercase and should output bitmap" do
+            filepath = 'examples/test/lowercase.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("OVO\nOVO\nXXX\n\n").to_stdout
+        end
+    end
+    
 end
