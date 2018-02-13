@@ -85,4 +85,18 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file error_adding_line.txt outputs to stdout" do
+        it "receives input to add horizontal line outside bitmap area - errors" do
+            filepath = 'examples/test/error_adding_line.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("You have tried to colour a pixel that is outside of the bitmap's area.\nInvalid input on line 5.\n").to_stdout
+        end
+    end
+    
+    context "given input from file create_grid_outside_range.txt outputs to stdout" do
+        it "receives input to create bitmap outside the 1 to 250 pixel area for bitmap" do
+            filepath = 'examples/test/create_grid_outside_range.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("You have entered an incorrect width or height for the bitmap. Please enter a range between 1 and 250.\nInvalid input on line 1.\n").to_stdout
+        end
+    end
+    
 end

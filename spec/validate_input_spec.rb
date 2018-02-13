@@ -35,7 +35,7 @@ describe "validate input" do
     
     context "given 'I 300 0'" do
         it "returns error message" do
-            expect(validateInput("I 300 0")).to include("input_error" => "You've entered an incorrect width or height for the bitmap. Please enter a range between 1 and 250.")
+            expect(validateInput("I 300 0")).to include("input_error" => "You have entered an incorrect width or height for the bitmap. Please enter a range between 1 and 250.")
         end
     end
     
