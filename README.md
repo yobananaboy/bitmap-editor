@@ -21,7 +21,9 @@ There are 6 supported commands:
 * `H X1 X2 Y C` - Draw a horizontal segment of colour C in row Y between columns X1 and X2 (inclusive).
 * `S` - Show the contents of the current image.
 
-You can chain multiple `S` commands to print the bitmap multiple times from a single input. You cannot chain multiple `I N M` commands together, though.
+You can chain multiple `S` commands to print the bitmap multiple times from a single input.
+
+You cannot chain multiple `I N M` commands together, though.
 
 Attempting to show or colour a bitmap before it has been created will throw an error.
 
