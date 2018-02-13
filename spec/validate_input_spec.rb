@@ -9,7 +9,7 @@ describe "validate input" do
     
     context "given 'S'" do
         it "returns input error because no width and height specified, therefore no bitmap created" do
-            expect(validateInput("S", 0, 0)).to include("input_error" => "Error. Cannot show bitmap. Please create a bitmap before using 'S' command.")
+            expect(validateInput("S", 0, 0)).to include("input_error" => "Cannot show bitmap. Please create a bitmap before using 'S' command.")
         end
     end
     
