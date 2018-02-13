@@ -7,7 +7,7 @@ def validateInput(input, width = 0, height = 0)
     when "S"
         if width <= 0 || height <= 0
             {
-                "input_error" => "Error. Cannot show bitmap. Please create a bitmap before using 'S' command."
+                "input_error" => "Cannot show bitmap. Please create a bitmap before using 'S' command."
             }
         else
             {

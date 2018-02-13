@@ -12,7 +12,7 @@ class BitmapEditor
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
     
     count = 1
-    width = 0
+    width = 0 
     height = 0
     bitmap = Hash.new("O")
     
@@ -22,7 +22,7 @@ class BitmapEditor
       unless line.length == 0
         input = validateInput(line, width, height)
         if input["input_error"]
-          puts input["input_error"]
+          puts "Error: #{input["input_error"]}"
           puts "Invalid input on line #{count}."
           break
         end
