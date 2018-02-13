@@ -8,7 +8,9 @@ require './lib/print_bitmap'
 class BitmapEditor
 
   def run(file)
+    
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
+    
     count = 1
     width = 0
     height = 0
@@ -32,9 +34,7 @@ class BitmapEditor
           bitmap = createEmptyBitmap(bitmap, width, height)
         when "L"
           bitmap = colourSinglePixel(bitmap, input["input_x_coordinate"], input["input_y_coordinate"], input["input_colour"])
-        when "V"
-          bitmap = colourMultiplePixels(bitmap, input["input_x_coordinate"], input["input_y_coordinate"], input["input_colour"])
-        when "H"
+        when "V", "H"
           bitmap = colourMultiplePixels(bitmap, input["input_x_coordinate"], input["input_y_coordinate"], input["input_colour"])
         when "C"
           bitmap = clearBitmap(bitmap, width, height)
@@ -43,7 +43,9 @@ class BitmapEditor
         end
         
       end
+      
       count +=1
+      
     end
     
     bitmap
