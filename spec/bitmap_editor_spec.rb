@@ -46,7 +46,7 @@ describe "bitmap editor" do
     context "given input from file print.txt outputs to stdout" do
        it "receives input to create empty grid, add horizontal line and then show output" do
           filepath = 'examples/test/print.txt'
-          expect { BitmapEditor.new.run(filepath) }.to output("OOO\nDDD\nOOO\n").to_stdout
+          expect { BitmapEditor.new.run(filepath) }.to output("OOO\nDDD\nOOO\n\n").to_stdout
        end
     end
     
@@ -67,7 +67,7 @@ describe "bitmap editor" do
     context "given input from file blank_input_line.txt outputs to stdout" do
         it "receives blank line in input - ignores this" do
             filepath = 'examples/test/blank_input_line.txt'
-            expect { BitmapEditor.new.run(filepath) }.to output("OOO\nOOO\nOOO\n").to_stdout
+            expect { BitmapEditor.new.run(filepath) }.to output("OOO\nOOO\nOOO\n\n").to_stdout
         end
     end
     
@@ -103,6 +103,13 @@ describe "bitmap editor" do
         it "receives input to add colour before bitmap created - errors" do
             filepath = 'examples/test/colour_before_bitmap.txt'
             expect { BitmapEditor.new.run(filepath) }.to output("You have tried to add colour before bitmap is created.\nInvalid input on line 1.\n").to_stdout
+        end
+    end
+    
+    context "given input from file multiple_show.txt outputs to stdout" do
+        it "receives multiple show inputs and prints a new bitmap for each show command" do
+            filepath = 'examples/test/multiple_show.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("OOO\nDOO\nOOO\n\nOOO\nDOC\nOOO\n\nOOO\nOOO\nOOO\n\n").to_stdout
         end
     end
     

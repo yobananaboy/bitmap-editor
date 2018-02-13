@@ -5,4 +5,6 @@ def printBitmap(bitmap, width, height)
         end
         puts
     end
+    puts
+    bitmap
 end
