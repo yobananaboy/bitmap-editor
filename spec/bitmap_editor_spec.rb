@@ -71,4 +71,18 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file blank_input_line_error.txt outputs to stdout" do
+        it "receives blank line in input - ignores this - then errors. Should give correct line of input which errored." do
+            filepath = 'examples/test/blank_input_line_error.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("Invalid input provided.\nInvalid input on line 3.\n").to_stdout
+        end
+    end
+    
+    context "given input from file add_colour_outside_bitmap_area.txt outputs to stdout" do
+        it "receives input to colour outside of bitmap area then errors"  do
+            filepath = 'examples/test/add_colour_outside_bitmap_area.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("You have tried to colour a pixel that is outside of the bitmap's area.\nInvalid input on line 3.\n").to_stdout
+        end
+    end
+    
 end
