@@ -81,7 +81,7 @@ def validateVH(input, width, height)
             
             {
                 "input_error" => "You have tried to add colour before bitmap is created."
-           }
+            }
         
         end
 end

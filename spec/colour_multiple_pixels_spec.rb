@@ -2,8 +2,8 @@ require 'colour_multiple_pixels'
 
 
 describe "colour multiple pixels with horizontal or vertical line" do
-    context "given two X and one Y coordinates, fill with horizontal line colour C"
-       it "returns 4 by 3 bitmap grid with colour added" do
+    context "given two X and one Y coordinates, fill with horizontal line colour P"
+       it "returns 4 by 3 bitmap grid with colour P added" do
            bitmap = {
                "1,1" => "O", "2,1" => "O", "3,1" => "O", "4,1" => "O",
                "1,2" => "O", "2,2" => "O", "3,2" => "O", "4,2" => "O",
@@ -16,8 +16,8 @@ describe "colour multiple pixels with horizontal or vertical line" do
            expect(colourMultiplePixels(bitmap, [1,3], 1, "P")).to include("4,1" => "O")
     end
     
-    context "given X and Y coordinates, fill with colour C"
-       it "returns 4 by 3 bitmap grid with colour added" do
+    context "given X and Y coordinates, fill with colour G"
+       it "returns 4 by 3 bitmap grid with colour G added" do
            bitmap = {
                "1,1" => "O", "2,1" => "D", "3,1" => "O", "4,1" => "O",
                "1,2" => "P", "2,2" => "D", "3,2" => "G", "4,2" => "O",
@@ -30,8 +30,8 @@ describe "colour multiple pixels with horizontal or vertical line" do
            expect(colourMultiplePixels(bitmap, 4, [1,3], "G")).to include("3,3" => "O")
     end
     
-    context "given X and Y coordinates, fill with colour C"
-       it "returns 6 by 7 bitmap grid with colour added" do
+    context "given X and Y coordinates, fill with colour M"
+       it "returns 6 by 7 bitmap grid with colour M added" do
            bitmap = {
                "1,1" => "O", "2,1" => "D", "3,1" => "O", "4,1" => "O", "5,1" => "O", "6,1" => "O",
                "1,2" => "P", "2,2" => "D", "3,2" => "G", "4,2" => "O", "5,2" => "O", "6,2" => "O",
