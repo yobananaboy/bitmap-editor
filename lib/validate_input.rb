@@ -19,7 +19,7 @@ def validateInput(input, width = 0, height = 0)
             "input_type" => "C"
         }
     when /^(I) (\d+) (\d+)$/
-        validateI(input, width, height)
+        validateI(input)
         
     when /^(L) (\d+) (\d+) ([A-Z])$/
         validateL(input, width, height)

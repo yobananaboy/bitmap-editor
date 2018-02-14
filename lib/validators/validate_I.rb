@@ -1,14 +1,5 @@
-def validateI(input, width, height)
-    
-    # check if width or height is greater than 0. If that is the case, the bitmap must already have been created
-    # return error to let user know
-    
-    if width > 0 || height > 0
-        return {
-            "input_error" => "You have already initiated a bitmap."
-        }
-    end
-    
+def validateI(input)
+
     # match string with regex, then captures to return array of captures
     
     input_type, input_width, input_height = input.match(/^(I) (\d+) (\d+)$/).captures

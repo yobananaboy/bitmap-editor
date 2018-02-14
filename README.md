@@ -23,7 +23,7 @@ There are 6 supported commands:
 
 You can chain multiple `S` commands to print the bitmap multiple times from a single input.
 
-You cannot chain multiple `I N M` commands together, though.
+You can also chain multiple `I N M` commands together.
 
 Attempting to show or colour a bitmap before it has been created will throw an error.
 
@@ -48,6 +48,7 @@ AWOOO
 OWOOO
 OWOOO
 OWOOO
+
 ```
 
 # Running

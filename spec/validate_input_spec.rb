@@ -2,7 +2,7 @@ require "validate_input"
 
 describe "validate input" do
     context "given 'S'" do
-        it "returns true because width and height specified, therefore bitmap already created" do
+        it "returns input type" do
             expect(validateInput("S", 4, 4)).to include("input_type" => "S")
         end
     end
@@ -14,22 +14,24 @@ describe "validate input" do
     end
     
     context "given 'C'" do
-        it "returns true" do
+        it "returns input type" do
             expect(validateInput("C")).to include("input_type" => "C") 
         end
     end
     
     context "given 'I 1 1'" do
-        it "returns true because no width and height specified, therefore new bitmap" do
-           expect(validateInput("I 1 1", 0, 0)).to include("input_type" => "I")
-           expect(validateInput("I 1 1", 0, 0)).to include("input_width" => 1)
-           expect(validateInput("I 1 1", 0, 0)).to include("input_height" => 1)
+        it "returns input type, width and height" do
+           expect(validateInput("I 1 1")).to include("input_type" => "I")
+           expect(validateInput("I 1 1")).to include("input_width" => 1)
+           expect(validateInput("I 1 1")).to include("input_height" => 1)
         end
     end
     
     context "given 'I 4 5'" do
-        it "returns input error because width and height specified, therefore bitmap already created" do
-            expect(validateInput("I 4 5", 10, 10)).to include("input_error" => "You have already initiated a bitmap.")
+        it "returns input type, width and height" do
+            expect(validateInput("I 4 5")).to include("input_type" => "I")
+            expect(validateInput("I 4 5")).to include("input_width" => 4)
+            expect(validateInput("I 4 5")).to include("input_height" => 5)
         end
     end
     
@@ -40,7 +42,7 @@ describe "validate input" do
     end
     
     context "given 'L 1 2 C' and pigment coordinates in the bitmap area" do
-        it "returns true" do
+        it "returns input type, x and y coordinates and input colour" do
            expect(validateInput("L 1 2 C", 4, 5)).to include("input_type" => "L")
            expect(validateInput("L 1 2 C", 4, 5)).to include("input_x_coordinate" => 1)
            expect(validateInput("L 1 2 C", 4, 5)).to include("input_y_coordinate" => 2)
@@ -61,7 +63,7 @@ describe "validate input" do
     end
     
     context "given 'V 2 3 5 C' and pigment coordinates in the bitmap area" do
-        it "returns true" do
+        it "returns input type, input x and y coordinates and input colour" do
             expect(validateInput("V 2 3 5 C", 10, 10)).to include("input_type" => "V")
             expect(validateInput("V 2 3 5 C", 10, 10)).to include("input_x_coordinate" => 2)
             expect(validateInput("V 2 3 5 C", 10, 10)).to include("input_y_coordinate" => [3,5])
@@ -70,7 +72,7 @@ describe "validate input" do
     end
     
     context "given 'H 3 2 6 C' and pigment coordinates in the bitmap area" do
-        it "returns true" do
+        it "returns input type, input x and y coordinates and input colour" do
             expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_type" => "H")
             expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_x_coordinate" => [2,3])
             expect(validateInput("H 3 2 6 C", 10, 10)).to include("input_y_coordinate" => 6)

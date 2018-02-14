@@ -120,4 +120,11 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file initialise_twice.txt outputs to stdout" do
+        it "receives multiple I inputs and should output second bitmap created" do
+            filepath = 'examples/test/initialise_twice.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("OO\n\n").to_stdout
+        end
+    end
+    
 end
