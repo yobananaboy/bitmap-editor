@@ -127,4 +127,11 @@ describe "bitmap editor" do
         end
     end
     
+    context "given input from file original_example.txt outputs to stdout" do
+        it "receives inputs and outputs bitmap" do
+            filepath = 'examples/test/original_example.txt'
+            expect { BitmapEditor.new.run(filepath) }.to output("OOOOO\nOOZZZ\nAWOOO\nOWOOO\nOWOOO\nOWOOO\n\n").to_stdout
+        end
+    end
+    
 end
