@@ -25,7 +25,7 @@ def validateVH(input, width, height)
                 
                 # Check x and y coordinates are in bitmap area. Error if not
                 
-                if input_x_coordinate < 1 || input_x_coordinate > width || input_y1_coordinate < 1 || input_y2_coordinate < 1 || input_y1_coordinate > height || input_y2_coordinate > height
+                if input_x_coordinate < 1 || input_x_coordinate > width || input_y1_coordinate < 1 || input_y1_coordinate > height || input_y2_coordinate < 1 || input_y2_coordinate > height
                     return {
                         "input_error" => "You have tried to colour a pixel that is outside of the bitmap's area."
                     }
@@ -33,7 +33,7 @@ def validateVH(input, width, height)
                 
                 # sort the two y coordinates into an array - smallest to largest
                 
-                input_coordinates = [input_y1_coordinate, input_y2_coordinate].sort!
+                input_coordinates = [input_y1_coordinate, input_y2_coordinate].sort
                 
                 # Return input type, x and y coordinates, and input colour
                 
@@ -64,7 +64,7 @@ def validateVH(input, width, height)
                 
                 # sort the two x coordinates into an array - smallest to largest
                 
-                input_coordinates = [input_x1_coordinate, input_x2_coordinate].sort!
+                input_coordinates = [input_x1_coordinate, input_x2_coordinate].sort
                 
                 # Return input type, x and y coordinates, and input colour
                 

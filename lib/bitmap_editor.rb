@@ -12,7 +12,7 @@ class BitmapEditor
     return puts "please provide correct file" if file.nil? || !File.exists?(file)
     
     count = 1
-    width = 0 
+    width = 0
     height = 0
     bitmap = Hash.new("O")
     
