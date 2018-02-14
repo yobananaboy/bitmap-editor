@@ -22,4 +22,5 @@ def validateI(input)
         "input_width" => input_width,
         "input_height" => input_height
     }
+
 end

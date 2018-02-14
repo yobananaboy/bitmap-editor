@@ -1,19 +1,12 @@
 require './lib/validators/validate_I'
 require './lib/validators/validate_L'
 require './lib/validators/validate_V_H'
+require './lib/validators/validate_S'
 
 def validateInput(input, width = 0, height = 0)
     case input
     when "S"
-        if width <= 0 || height <= 0
-            {
-                "input_error" => "Cannot show bitmap. Please create a bitmap before using 'S' command."
-            }
-        else
-            {
-                "input_type" => "S"
-            }
-        end
+        validateS(width, height)
     when "C"
         {
             "input_type" => "C"
