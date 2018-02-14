@@ -18,14 +18,25 @@ class BitmapEditor
     
     File.open(file).each do |line|
       
+      # strip line and put it to uppercase to avoid errors with errant spaces or lowercase letters
+      
       line = line.chomp.strip.upcase
+      
       unless line.length == 0
+      
+        # unless line length is 0, we want to validate this line of input
+      
         input = validateInput(line, width, height)
+        
+        # if there has been an error, tell the user what the error was and where it occurred in the file they added and break out of loop
+        
         if input["input_error"]
           puts "Error: #{input["input_error"]}"
           puts "Invalid input on line #{count} in #{file}."
           break
         end
+        
+        # if input is valid, then call relevant method depending on the input type
         
         case input["input_type"]
         when "I"
@@ -43,6 +54,8 @@ class BitmapEditor
         end
         
       end
+      
+      # update the count when we have finished with each line - because we will be moving on to the next line
       
       count +=1
       
